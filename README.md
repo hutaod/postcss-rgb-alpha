@@ -3,10 +3,10 @@
 [PostCSS] plugin to transform [W3C CSS Color Module Level 4 rgb()](https://drafts.csswg.org/css-color/#funcdef-rgb) new syntax to more compatible CSS (comma-separated rgb() or rgba()).
 
 [PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/dmarchena/postcss-color-rgb.svg
-[ci]:      https://travis-ci.org/dmarchena/postcss-color-rgb
-[cov-img]: https://coveralls.io/repos/github/dmarchena/postcss-color-rgb/badge.svg
-[cov]:     https://coveralls.io/github/dmarchena/postcss-color-rgb
+[ci-img]:  https://travis-ci.org/hutaod/postcss-rgb-alpha.svg
+[ci]:      https://travis-ci.org/hutaod/postcss-rgb-alpha
+[cov-img]: https://coveralls.io/repos/github/hutaod/postcss-rgb-alpha/badge.svg
+[cov]:     https://coveralls.io/github/hutaod/postcss-rgb-alpha
 
 ## CSS Colors 4 syntax
 
@@ -50,7 +50,7 @@ rgba() = rgba( <percentage>#{3} , <alpha-value> ) |
 ## Usage
 
 ```js
-postcss([ require('postcss-color-rgb') ])
+postcss([ require('postcss-rgb-alpha') ])
 ```
 
 See [PostCSS] docs for examples for your environment.

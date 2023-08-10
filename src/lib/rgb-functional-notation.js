@@ -16,20 +16,20 @@ function legacyChannel(value) {
 function getColorData(colorFn) {
     /* const rgbSyntaxRegex = /(\w{3})a?\s*\((\d*\.?\d+\%?)\s+(\d*\.?\d+\%?)
     \s+(\d*\.?\d+\%?)(?:\s*\/\s*(\d*\.?\d+\%?))?\)/g; */
-    const rgbSyntaxPlusAltRegex = /(rgb)a?\s*\(\s*(\d*\.?\d+\%?)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%?)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%?)(?:\s*(?:\/|,)\s*(\d*\.?\d+\%?))?\s*\)/g; // eslint-disable-line max-len
-    const match = rgbSyntaxPlusAltRegex.exec(colorFn);
+    let rgbSyntaxPlusAltRegex = /(rgb)a?\s*\(\s*(\d*\.?\d+%?)(?:\s+|(?:\s*,\s*))(\d*\.?\d+%?)(?:\s+|(?:\s*,\s*))(\d*\.?\d+%?)(?:\s*(?:\/|,)\s*(\d*\.?\d+%?))?\s*\)/g; // eslint-disable-line max-len
+    let match = rgbSyntaxPlusAltRegex.exec(colorFn);
     if (match === null) return false;
     return {
-        fn: match[1],
-        r: legacyChannel(match[2]),
-        g: legacyChannel(match[3]),
+        alpha: match[5] ? legacyAlpha(match[5]) : false,
         b: legacyChannel(match[4]),
-        alpha: match[5] ? legacyAlpha(match[5]) : false
+        fn: match[1],
+        g: legacyChannel(match[3]),
+        r: legacyChannel(match[2])
     };
 }
 
 function legacy(colorFn) {
-    const colorData = getColorData(colorFn);
+    let colorData = getColorData(colorFn);
 
     if (!colorData) return colorFn;
 
@@ -51,4 +51,4 @@ function legacy(colorFn) {
     return result;
 }
 
-export default { legacy };
+module.exports = { legacy }

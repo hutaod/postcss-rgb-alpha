@@ -25,7 +25,7 @@ const plugin = () => ({
         }
         decl.value = transformRgb(decl.value);
     },
-    postcssPlugin: 'postcss-color-alpha'
+    postcssPlugin: 'postcss-rgb-alpha'
 });
 
 plugin.postcss = true;

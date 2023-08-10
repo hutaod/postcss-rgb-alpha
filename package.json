@@ -1,6 +1,6 @@
 {
   "name": "postcss-rgb-alpha",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "PostCSS plugin to transform W3C CSS Color Module Level 4 rgb() new syntax to more compatible CSS (comma-separated rgb() or rgba())",
   "keywords": [
     "postcss",
